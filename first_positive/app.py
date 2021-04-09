@@ -10,13 +10,21 @@ from typing import List
 
 def app(values: List[int]):
     
-    if sum(values) < 0:
+    if sum(values) <= 0:
         return 1
    
     if not values:
         return 1
     
     else:
-        return values[-1] + 1
+        filtered_values = list(filter(lambda value: value > 0, sorted(values)))
+        r = range(filtered_values[0], filtered_values[-1])
+        
+        for R, value in zip(r, filtered_values):
+            if R != value:
+                return R
+        
+        return filtered_values[-1] + 1
+
     
     

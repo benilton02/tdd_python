@@ -2,11 +2,10 @@
 '''
 Casos de testes: 
 
-[ok] A -> existem n numeros positivos
+[ok] A -> existem n numeros positivos não ordenados
 [ok] B -> não exitem numeros positivos, então retorna 1
-c -> lista vazia, então retorna 1
-D -> não existe numeros faltantes, então retorna o ULTIMO + 1
-E -> lista com numeros inteiros não ordenados
+[ok] c -> lista vazia, então retorna 1
+[ok] D -> lista com numeros inteiros não ordenados
 '''
 
 
@@ -17,7 +16,7 @@ class TestApp(TestCase):
     
     def test_a(self):
         esperado = 7
-        resultado = app([1, 2, 3, 4, 5, 6])
+        resultado = app([1, 2, 3, 4, 6, 5])
         self.assertEqual(esperado, resultado)
 
     def test_b(self):
@@ -29,7 +28,11 @@ class TestApp(TestCase):
         esperado = 1
         resultado = app([])
         self.assertEqual(esperado, resultado)
-
+    
+    def test_d(self):
+        esperado = 2
+        resultado = app([1, 3, 10, -2, -14, 20])
+        self.assertEqual(esperado, resultado)
 
 if __name__ == "__main__":
     main()

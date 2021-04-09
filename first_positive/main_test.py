@@ -25,6 +25,11 @@ class TestApp(TestCase):
         resultado = app([-1, 0])
         self.assertEqual(esperado, resultado)
 
+    def test_c(self):
+        esperado = 1
+        resultado = app([])
+        self.assertEqual(esperado, resultado)
+
 
 if __name__ == "__main__":
     main()

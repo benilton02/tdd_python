@@ -13,6 +13,10 @@ def app(values: List[int]):
     if sum(values) < 0:
         return 1
    
-    value = values[-1] + 1
-    return value
+    if not values:
+        return 1
+    
+    else:
+        return values[-1] + 1
+    
     

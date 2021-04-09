@@ -22,7 +22,8 @@ class TestApp(TestCase):
 
     def test_b(self):
         esperado = 1
-        resultado = app([-1, 0])    
+        resultado = app([-1, 0])
+        self.assertEqual(esperado, resultado)
 
 
 if __name__ == "__main__":

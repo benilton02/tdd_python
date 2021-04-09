@@ -12,7 +12,7 @@ def app(values: List[int]):
     
     if sum(values) < 0:
         return 1
-
+   
     value = values[-1] + 1
     return value
     

@@ -60,7 +60,7 @@ class TestTasksList(TestCase):
     
 
     def test_tasks_list(self):
-        tasks_list()
+        tasks_list("","")
 
     
 if __name__ == "__main__":
